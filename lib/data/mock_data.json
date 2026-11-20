@@ -46,6 +46,14 @@
       "modality": "Presencial"
     },
     {
+      "id": "upx",
+      "name": "UPX",
+      "code": "UPX-301",
+      "professor": "Fernanda Castro",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
       "id": "calc2",
       "name": "Cálculo II",
       "code": "MAT-202",
@@ -122,6 +130,13 @@
       "room": "Lab 02"
     },
     {
+      "subjectId": "upx",
+      "weekday": 4,
+      "start": "20:50",
+      "end": "22:30",
+      "room": "Lab Maker"
+    },
+    {
       "subjectId": "bd",
       "weekday": 5,
       "start": "19:00",
@@ -148,17 +163,15 @@
           "ac2": 5.94,
           "af": null,
           "sub": null,
-          "ag": 8.5,
-          "average": 6.71
+          "ag": 8.5
         },
         {
           "subjectId": "pe",
-          "ac1": 1.9,
-          "ac2": 1.2,
+          "ac1": 4,
+          "ac2": 8,
           "af": null,
           "sub": null,
-          "ag": 8.5,
-          "average": 2.45
+          "ag": 8.5
         },
         {
           "subjectId": "td",
@@ -166,8 +179,7 @@
           "ac2": 9,
           "af": null,
           "sub": null,
-          "ag": 8.5,
-          "average": 7.8
+          "ag": 8.5
         },
         {
           "subjectId": "wd",
@@ -175,8 +187,15 @@
           "ac2": 6,
           "af": null,
           "sub": null,
-          "ag": 8.5,
-          "average": 7.9
+          "ag": 8.5
+        },
+        {
+          "subjectId": "upx",
+          "ac1": 9,
+          "ac2": 8,
+          "af": null,
+          "sub": null,
+          "ag": 8.5
         }
       ],
       "absences": [
@@ -318,6 +337,21 @@
               "count": 1
             }
           ]
+        },
+        {
+          "subjectId": "upx",
+          "total": 4,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-09-10",
+              "count": 2
+            },
+            {
+              "date": "2026-10-15",
+              "count": 2
+            }
+          ]
         }
       ]
     },
@@ -332,8 +366,7 @@
           "ac2": 7.5,
           "af": 7.9,
           "sub": null,
-          "ag": 9,
-          "average": 7.95
+          "ag": 9
         },
         {
           "subjectId": "calc2",
@@ -341,8 +374,7 @@
           "ac2": 4.8,
           "af": 6.2,
           "sub": 7.1,
-          "ag": 8,
-          "average": 6.42
+          "ag": 8
         },
         {
           "subjectId": "fis2",
@@ -350,8 +382,7 @@
           "ac2": 7.3,
           "af": 6.8,
           "sub": null,
-          "ag": 8.5,
-          "average": 7.06
+          "ag": 8.5
         },
         {
           "subjectId": "ing",
@@ -359,8 +390,7 @@
           "ac2": 9,
           "af": 9.2,
           "sub": null,
-          "ag": 10,
-          "average": 9.31
+          "ag": 10
         }
       ],
       "absences": [

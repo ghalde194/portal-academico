@@ -65,11 +65,12 @@ class GradesScreen extends StatelessWidget {
           children: [
             _HelpLine('AC1 / AC2', 'Avaliações contínuas do semestre.'),
             _HelpLine('AF', 'Avaliação final.'),
-            _HelpLine('Sub', 'Prova substitutiva (substitui a menor nota).'),
+            _HelpLine('Sub', 'Prova substitutiva (substitui a menor AC).'),
             _HelpLine('AG', 'Avaliação geral / institucional.'),
-            _HelpLine('Média', 'Média final calculada da disciplina.'),
+            _HelpLine('Média', 'AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45'),
             SizedBox(height: 8),
             Text(
+              'Enquanto a AF não sai, a média mostrada é parcial (AF conta como 0). '
               '"-" indica nota ainda não lançada.',
               style: TextStyle(color: AppColors.textMuted, fontSize: 12),
             ),
@@ -80,13 +81,37 @@ class GradesScreen extends StatelessWidget {
     );
   }
 
-  /// Detalhes da disciplina ao tocar no bloco de notas.
+  /// Detalhes da disciplina ao tocar no bloco de notas: média, situação e
+  /// quanto falta tirar na AF.
   void _showDetails(BuildContext context, Grade grade) {
     final avg = grade.average;
-    final (status, color) = switch (avg) {
-      null => ('Em andamento', AppColors.textSecondary),
-      >= 6 => ('Acima da média', AppColors.success),
-      _ => ('Abaixo da média', AppColors.danger),
+    final pass = GradeRules.passingGrade;
+    final needed = grade.neededOnAf;
+
+    final (String status, Color color, String detail) = switch (avg) {
+      null => ('Em andamento', AppColors.textSecondary, 'Nenhuma nota lançada ainda.'),
+      _ when grade.isPartial && needed <= 0 => (
+        'Média já garantida',
+        AppColors.success,
+        'Mesmo com 0 na AF você atinge ${Formatters.grade(pass)}.',
+      ),
+      _ when grade.isPartial && needed > 10 => (
+        'Em risco',
+        AppColors.danger,
+        'Nem com 10 na AF é possível chegar a ${Formatters.grade(pass)}.',
+      ),
+      _ when grade.isPartial => (
+        'Aguardando AF',
+        AppColors.warning,
+        'Você precisa de ${Formatters.grade(needed)} na AF para atingir '
+            'média ${Formatters.grade(pass)}.',
+      ),
+      final a when a >= pass => (
+        'Aprovado',
+        AppColors.success,
+        'Média final ${Formatters.grade(a)}.',
+      ),
+      final a => ('Reprovado', AppColors.danger, 'Média final ${Formatters.grade(a)}.'),
     };
 
     showModalBottomSheet<void>(
@@ -113,8 +138,17 @@ class GradesScreen extends StatelessWidget {
               children: [
                 Icon(Icons.circle, size: 12, color: color),
                 const SizedBox(width: 8),
-                Text('Situação: $status  (média ${Formatters.grade(avg)})'),
+                Text('Situação: $status', style: const TextStyle(fontWeight: FontWeight.w600)),
               ],
+            ),
+            const SizedBox(height: 6),
+            Text(detail, style: const TextStyle(color: AppColors.textSecondary)),
+            const SizedBox(height: 12),
+            Text(
+              grade.isPartial
+                  ? 'Média parcial = AC1×0,15 + AC2×0,30 + AG×0,10 (AF ainda não lançada)'
+                  : 'Média = AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45',
+              style: const TextStyle(fontSize: 12, color: AppColors.textMuted),
             ),
           ],
         ),

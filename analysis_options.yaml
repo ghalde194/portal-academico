@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # Flutter 3.47+ marca `package:flutter/material.dart` como "deprecated"
+    # em favor de `package:material_ui`. O import continua funcionando e
+    # mantém compatibilidade com versões anteriores do Flutter.
+    deprecated_member_use: ignore
+
+linter:
+  rules:
+    prefer_single_quotes: true
+    prefer_const_constructors: true
+    avoid_print: true

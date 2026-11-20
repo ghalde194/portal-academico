@@ -1,0 +1,546 @@
+{
+  "user": {
+    "id": "u-001",
+    "firstName": "Leonardo",
+    "fullName": "Leonardo Almeida",
+    "ra": "220145",
+    "course": "Engenharia de Computação",
+    "email": "leonardo.almeida@aluno.portalacademico.edu.br",
+    "phone": "(15) 99876-5432",
+    "campus": "Campus Central",
+    "semester": "6º semestre",
+    "shift": "Noturno",
+    "enrollmentStatus": "Matriculado"
+  },
+  "subjects": [
+    {
+      "id": "bd",
+      "name": "Banco de Dados",
+      "code": "ECO-301",
+      "professor": "Marcos Oliveira",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "pe",
+      "name": "Programação Estruturada",
+      "code": "ECO-214",
+      "professor": "Carla Mendes",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "td",
+      "name": "Transformação Digital - EaD",
+      "code": "GER-120",
+      "professor": "Ana Ribeiro",
+      "workload": 40,
+      "modality": "EaD"
+    },
+    {
+      "id": "wd",
+      "name": "Web Design",
+      "code": "ECO-232",
+      "professor": "Bruno Teixeira",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "calc2",
+      "name": "Cálculo II",
+      "code": "MAT-202",
+      "professor": "Paulo Henrique",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "fis2",
+      "name": "Física II",
+      "code": "FIS-202",
+      "professor": "Juliana Prado",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "alg",
+      "name": "Algoritmos e Lógica",
+      "code": "ECO-110",
+      "professor": "Ricardo Nunes",
+      "workload": 80,
+      "modality": "Presencial"
+    },
+    {
+      "id": "ing",
+      "name": "Inglês Técnico",
+      "code": "LET-105",
+      "professor": "Mariana Lopes",
+      "workload": 40,
+      "modality": "Presencial"
+    }
+  ],
+  "schedule": [
+    {
+      "subjectId": "pe",
+      "weekday": 1,
+      "start": "19:00",
+      "end": "20:40",
+      "room": "C12"
+    },
+    {
+      "subjectId": "pe",
+      "weekday": 1,
+      "start": "20:50",
+      "end": "22:30",
+      "room": "Lab 04"
+    },
+    {
+      "subjectId": "wd",
+      "weekday": 2,
+      "start": "19:00",
+      "end": "20:40",
+      "room": "Lab 07"
+    },
+    {
+      "subjectId": "wd",
+      "weekday": 2,
+      "start": "20:50",
+      "end": "22:30",
+      "room": "Lab 07"
+    },
+    {
+      "subjectId": "td",
+      "weekday": 3,
+      "start": "19:00",
+      "end": "20:40",
+      "room": "Online"
+    },
+    {
+      "subjectId": "bd",
+      "weekday": 4,
+      "start": "19:00",
+      "end": "20:40",
+      "room": "Lab 02"
+    },
+    {
+      "subjectId": "bd",
+      "weekday": 5,
+      "start": "19:00",
+      "end": "20:40",
+      "room": "C26"
+    },
+    {
+      "subjectId": "bd",
+      "weekday": 5,
+      "start": "20:50",
+      "end": "22:30",
+      "room": "C26"
+    }
+  ],
+  "periods": [
+    {
+      "id": "2026/02",
+      "label": "2º semestre de 2026",
+      "lastSync": "11:58",
+      "grades": [
+        {
+          "subjectId": "bd",
+          "ac1": 7.68,
+          "ac2": 5.94,
+          "af": null,
+          "sub": null,
+          "ag": 8.5,
+          "average": 6.71
+        },
+        {
+          "subjectId": "pe",
+          "ac1": 1.9,
+          "ac2": 1.2,
+          "af": null,
+          "sub": null,
+          "ag": 8.5,
+          "average": 2.45
+        },
+        {
+          "subjectId": "td",
+          "ac1": 6,
+          "ac2": 9,
+          "af": null,
+          "sub": null,
+          "ag": 8.5,
+          "average": 7.8
+        },
+        {
+          "subjectId": "wd",
+          "ac1": 10,
+          "ac2": 6,
+          "af": null,
+          "sub": null,
+          "ag": 8.5,
+          "average": 7.9
+        }
+      ],
+      "absences": [
+        {
+          "subjectId": "td",
+          "total": 0,
+          "max": null,
+          "records": []
+        },
+        {
+          "subjectId": "wd",
+          "total": 18,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-08-04",
+              "count": 2
+            },
+            {
+              "date": "2026-08-11",
+              "count": 2
+            },
+            {
+              "date": "2026-08-18",
+              "count": 2
+            },
+            {
+              "date": "2026-08-25",
+              "count": 2
+            },
+            {
+              "date": "2026-09-01",
+              "count": 2
+            },
+            {
+              "date": "2026-09-08",
+              "count": 2
+            },
+            {
+              "date": "2026-09-15",
+              "count": 2
+            },
+            {
+              "date": "2026-09-22",
+              "count": 2
+            },
+            {
+              "date": "2026-09-29",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "subjectId": "pe",
+          "total": 22,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-08-03",
+              "count": 2
+            },
+            {
+              "date": "2026-08-10",
+              "count": 2
+            },
+            {
+              "date": "2026-08-17",
+              "count": 2
+            },
+            {
+              "date": "2026-08-24",
+              "count": 2
+            },
+            {
+              "date": "2026-08-31",
+              "count": 2
+            },
+            {
+              "date": "2026-09-07",
+              "count": 2
+            },
+            {
+              "date": "2026-09-14",
+              "count": 2
+            },
+            {
+              "date": "2026-09-21",
+              "count": 2
+            },
+            {
+              "date": "2026-09-28",
+              "count": 2
+            },
+            {
+              "date": "2026-10-05",
+              "count": 2
+            },
+            {
+              "date": "2026-10-12",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "subjectId": "bd",
+          "total": 15,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-08-07",
+              "count": 2
+            },
+            {
+              "date": "2026-08-14",
+              "count": 2
+            },
+            {
+              "date": "2026-08-21",
+              "count": 2
+            },
+            {
+              "date": "2026-08-28",
+              "count": 2
+            },
+            {
+              "date": "2026-09-04",
+              "count": 2
+            },
+            {
+              "date": "2026-09-11",
+              "count": 2
+            },
+            {
+              "date": "2026-09-18",
+              "count": 2
+            },
+            {
+              "date": "2026-09-25",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2026/01",
+      "label": "1º semestre de 2026",
+      "lastSync": "08:30",
+      "grades": [
+        {
+          "subjectId": "alg",
+          "ac1": 8.2,
+          "ac2": 7.5,
+          "af": 7.9,
+          "sub": null,
+          "ag": 9,
+          "average": 7.95
+        },
+        {
+          "subjectId": "calc2",
+          "ac1": 5.4,
+          "ac2": 4.8,
+          "af": 6.2,
+          "sub": 7.1,
+          "ag": 8,
+          "average": 6.42
+        },
+        {
+          "subjectId": "fis2",
+          "ac1": 6.9,
+          "ac2": 7.3,
+          "af": 6.8,
+          "sub": null,
+          "ag": 8.5,
+          "average": 7.06
+        },
+        {
+          "subjectId": "ing",
+          "ac1": 9.5,
+          "ac2": 9,
+          "af": 9.2,
+          "sub": null,
+          "ag": 10,
+          "average": 9.31
+        }
+      ],
+      "absences": [
+        {
+          "subjectId": "alg",
+          "total": 6,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-02-10",
+              "count": 2
+            },
+            {
+              "date": "2026-03-24",
+              "count": 2
+            },
+            {
+              "date": "2026-05-05",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "subjectId": "calc2",
+          "total": 12,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-02-11",
+              "count": 2
+            },
+            {
+              "date": "2026-03-04",
+              "count": 2
+            },
+            {
+              "date": "2026-03-25",
+              "count": 2
+            },
+            {
+              "date": "2026-04-15",
+              "count": 2
+            },
+            {
+              "date": "2026-05-06",
+              "count": 2
+            },
+            {
+              "date": "2026-05-27",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "subjectId": "fis2",
+          "total": 16,
+          "max": 20,
+          "records": [
+            {
+              "date": "2026-02-12",
+              "count": 2
+            },
+            {
+              "date": "2026-02-26",
+              "count": 2
+            },
+            {
+              "date": "2026-03-12",
+              "count": 2
+            },
+            {
+              "date": "2026-03-26",
+              "count": 2
+            },
+            {
+              "date": "2026-04-09",
+              "count": 2
+            },
+            {
+              "date": "2026-04-23",
+              "count": 2
+            },
+            {
+              "date": "2026-05-07",
+              "count": 2
+            },
+            {
+              "date": "2026-05-21",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "subjectId": "ing",
+          "total": 2,
+          "max": 10,
+          "records": [
+            {
+              "date": "2026-02-13",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notices": [
+    {
+      "id": "n1",
+      "title": "Monitoria - Programação Estruturada",
+      "subtitle": "Terças e quintas, 18h às 19h • Lab 04",
+      "category": "Monitoria"
+    },
+    {
+      "id": "n2",
+      "title": "Semana de Provas - AF",
+      "subtitle": "De 30/11 a 05/12 • Confira o calendário",
+      "category": "Avaliações"
+    },
+    {
+      "id": "n3",
+      "title": "Estágio: vagas abertas",
+      "subtitle": "Central de Carreiras • Inscrições até 28/11",
+      "category": "Carreiras"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "m1",
+      "title": "Nota lançada",
+      "body": "Sua nota de AC2 em Banco de Dados foi publicada.",
+      "date": "2026-11-20T10:15:00",
+      "read": false
+    },
+    {
+      "id": "m2",
+      "title": "Limite de faltas",
+      "body": "Você ultrapassou o limite de faltas em Programação Estruturada.",
+      "date": "2026-11-18T21:40:00",
+      "read": false
+    },
+    {
+      "id": "m3",
+      "title": "Aviso da coordenação",
+      "body": "As inscrições para a substitutiva vão até 04/12.",
+      "date": "2026-11-14T09:00:00",
+      "read": true
+    },
+    {
+      "id": "m4",
+      "title": "Biblioteca",
+      "body": "O livro 'Sistemas de Banco de Dados' vence em 3 dias.",
+      "date": "2026-11-10T14:30:00",
+      "read": true
+    }
+  ],
+  "banners": [
+    {
+      "id": "b1",
+      "eyebrow": "PORTAL ACADÊMICO",
+      "title": "Semana da Engenharia 2026",
+      "subtitle": "Palestras, oficinas e hackathon",
+      "cta": "Saiba mais",
+      "palette": "night"
+    },
+    {
+      "id": "b2",
+      "eyebrow": "CARREIRAS",
+      "title": "Feira de Estágios",
+      "subtitle": "Mais de 40 empresas participantes",
+      "cta": "Inscreva-se",
+      "palette": "blue"
+    },
+    {
+      "id": "b3",
+      "eyebrow": "BIBLIOTECA",
+      "title": "Acervo digital 24h",
+      "subtitle": "Milhares de e-books disponíveis",
+      "cta": "Acessar",
+      "palette": "teal"
+    }
+  ]
+}

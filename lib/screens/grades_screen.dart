@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../models/models.dart';
 import '../services/app_controller.dart';
 import '../theme/app_colors.dart';
-import '../utils/formatters.dart';
 import '../widgets/common.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/grade_card.dart';
@@ -67,10 +66,9 @@ class GradesScreen extends StatelessWidget {
             _HelpLine('AF', 'Avaliação final.'),
             _HelpLine('Sub', 'Prova substitutiva (substitui a menor AC).'),
             _HelpLine('AG', 'Avaliação geral / institucional.'),
-            _HelpLine('Média', 'AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45'),
+            _HelpLine('Média', 'Média final, lançada pela instituição.'),
             SizedBox(height: 8),
             Text(
-              'Enquanto a AF não sai, a média mostrada é parcial (AF conta como 0). '
               '"-" indica nota ainda não lançada.',
               style: TextStyle(color: AppColors.textMuted, fontSize: 12),
             ),
@@ -81,39 +79,8 @@ class GradesScreen extends StatelessWidget {
     );
   }
 
-  /// Detalhes da disciplina ao tocar no bloco de notas: média, situação e
-  /// quanto falta tirar na AF.
+  /// Detalhes da disciplina ao tocar no bloco de notas.
   void _showDetails(BuildContext context, Grade grade) {
-    final avg = grade.average;
-    final pass = GradeRules.passingGrade;
-    final needed = grade.neededOnAf;
-
-    final (String status, Color color, String detail) = switch (avg) {
-      null => ('Em andamento', AppColors.textSecondary, 'Nenhuma nota lançada ainda.'),
-      _ when grade.isPartial && needed <= 0 => (
-        'Média já garantida',
-        AppColors.success,
-        'Mesmo com 0 na AF você atinge ${Formatters.grade(pass)}.',
-      ),
-      _ when grade.isPartial && needed > 10 => (
-        'Em risco',
-        AppColors.danger,
-        'Nem com 10 na AF é possível chegar a ${Formatters.grade(pass)}.',
-      ),
-      _ when grade.isPartial => (
-        'Aguardando AF',
-        AppColors.warning,
-        'Você precisa de ${Formatters.grade(needed)} na AF para atingir '
-            'média ${Formatters.grade(pass)}.',
-      ),
-      final a when a >= pass => (
-        'Aprovado',
-        AppColors.success,
-        'Média final ${Formatters.grade(a)}.',
-      ),
-      final a => ('Reprovado', AppColors.danger, 'Média final ${Formatters.grade(a)}.'),
-    };
-
     showModalBottomSheet<void>(
       context: context,
       builder: (_) => Padding(
@@ -133,23 +100,6 @@ class GradesScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             GradeCard(grade: grade),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Icon(Icons.circle, size: 12, color: color),
-                const SizedBox(width: 8),
-                Text('Situação: $status', style: const TextStyle(fontWeight: FontWeight.w600)),
-              ],
-            ),
-            const SizedBox(height: 6),
-            Text(detail, style: const TextStyle(color: AppColors.textSecondary)),
-            const SizedBox(height: 12),
-            Text(
-              grade.isPartial
-                  ? 'Média parcial = AC1×0,15 + AC2×0,30 + AG×0,10 (AF ainda não lançada)'
-                  : 'Média = AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45',
-              style: const TextStyle(fontSize: 12, color: AppColors.textMuted),
-            ),
           ],
         ),
       ),

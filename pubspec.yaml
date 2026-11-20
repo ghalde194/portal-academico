@@ -3,7 +3,7 @@ description: "Portal Acadêmico — app de notas, faltas e horários (front-end 
 publish_to: 'none'
 
 # versão (versionName) + número do build (versionCode)
-version: 1.1.0+2
+version: 1.2.0+3
 
 environment:
   sdk: ">=3.7.0 <4.0.0"

@@ -53,10 +53,11 @@ class GradeCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 3),
                 ],
-                Expanded(
+                const Expanded(
                   child: _GradeCell(
                     label: 'Média',
-                    value: Formatters.grade(grade.average),
+                    // Média não é calculada pelo app: fica "-" (igual ao app oficial).
+                    value: '-',
                     highlighted: true,
                   ),
                 ),

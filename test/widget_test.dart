@@ -29,23 +29,9 @@ void main() {
     });
   });
 
-  group('Grade.average (AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45)', () {
-    test('Programação Estruturada: AC1 4, AC2 8, AG 8,5 -> 3,85 parcial', () {
-      const g = Grade(subjectId: 'pe', ac1: 4, ac2: 8, ag: 8.5);
-      expect(g.average, 3.85);
-      expect(g.isPartial, true);
-      expect(g.neededOnAf, 4.78);
-    });
-    test('UPX: AC1 9, AC2 8, AG 8,5 -> 4,6 parcial', () {
-      const g = Grade(subjectId: 'upx', ac1: 9, ac2: 8, ag: 8.5);
-      expect(g.average, 4.6);
-      expect(g.neededOnAf, 3.11);
-    });
-    test('com AF lançada', () {
-      const g = Grade(subjectId: 'x', ac1: 9, ac2: 8, ag: 8.5, af: 7);
-      expect(g.average, 7.75);
-      expect(g.isPartial, false);
-    });
+  test('Média não é calculada antes da AF', () {
+    const g = Grade(subjectId: 'pe', ac1: 4, ac2: 8, ag: 8.5);
+    expect(g.average, isNull);
   });
 
   test('Formatters.headerDate', () {

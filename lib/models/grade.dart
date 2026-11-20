@@ -68,11 +68,11 @@ class Grade {
   }
 
   /// Média final: AC1×0,15 + AC2×0,30 + AG×0,10 + AF×0,45.
-  /// Enquanto a AF não sai, ela conta como 0 (média parcial).
-  /// Retorna null se nenhuma nota foi lançada ainda.
+  /// Só é calculada depois que a AF é lançada; antes disso fica null ("-"),
+  /// igual ao app original.
   double? get average {
-    if (ac1 == null && ac2 == null && ag == null && af == null) return null;
-    return _round2(pointsWithoutAf + (af ?? 0) * GradeRules.weightAf);
+    if (af == null) return null;
+    return _round2(pointsWithoutAf + af! * GradeRules.weightAf);
   }
 
   /// true enquanto a AF ainda não foi lançada.
